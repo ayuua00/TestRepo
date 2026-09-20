@@ -6,17 +6,23 @@ public class CameraSwitch : MonoBehaviour
     [SerializeField] private Transform cameraTs;
     [SerializeField] private Vector3 camera1_1;
     [SerializeField] private Vector3 camera1_2;
-    [SerializeField] private Vector3 camera2_1;
-    [SerializeField] private Vector3 camera2_2;
+    [SerializeField] private float HightMin;
+    [SerializeField] private float HightMax;
     [SerializeField] private float transTime = 1f;
 
-    public bool capsLock = false;
+    public bool capsLock;
     private bool isTransitioning = false;
 
+    private void Start()
+    {
+        capsLock = true;
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.CapsLock) && !isTransitioning)
         {
+            Vector3 camera2_1 = new Vector3(cameraTs.position.x, HightMin, cameraTs.position.z);
+            Vector3 camera2_2 = new Vector3(cameraTs.position.x, HightMax, cameraTs.position.z);
             Quaternion fromRotation = Quaternion.Euler(capsLock ? camera1_1 : camera1_2);
             Quaternion toRotation = Quaternion.Euler(capsLock ? camera1_2 : camera1_1);
             Vector3 fromPotion = (capsLock ? camera2_1 : camera2_2);
