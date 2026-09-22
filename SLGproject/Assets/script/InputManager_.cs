@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
 public class InputManager_ : MonoBehaviour
 {
     [SerializeField]
@@ -24,7 +24,6 @@ public class InputManager_ : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 100, placementLayermask))
         {
             Gohit = hit.transform.gameObject;
-            Debug.Log(hit.transform.name);
             float gridSize = 2f;
             float snappedX = Mathf.Round(hit.point.x / gridSize) * gridSize;
             float snappedZ = Mathf.Round(hit.point.z / gridSize) * gridSize;

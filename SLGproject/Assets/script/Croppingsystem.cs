@@ -16,12 +16,12 @@ public class Croppingsystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ChangePlough();
+        
     }
 
-    public void ChangePlough()
+    public void OnTriggerEnter(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && Cs.capsLock == false&&InputM.Gohit.transform.tag=="Grass" ) 
+        if (Input.GetKeyDown(KeyCode.Mouse0) && Cs.capsLock == false && InputM.Gohit.transform.tag == "Grass"&&other.transform.tag=="Palyer") 
         {
             InputM.Gohit.SetActive(false);
             Instantiate(Plough);
