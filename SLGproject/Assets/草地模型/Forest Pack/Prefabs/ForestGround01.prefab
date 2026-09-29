@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 4482437886289408}
   - component: {fileID: 33838782530932874}
   - component: {fileID: 23296891081351882}
-  - component: {fileID: 3448118493900410601}
-  - component: {fileID: 350761352308054437}
+  - component: {fileID: 254034954104288791}
   m_Layer: 0
   m_Name: ForestGround01
   m_TagString: Grass
@@ -85,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3448118493900410601
+--- !u!65 &254034954104288791
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,16 +97,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9999998, y: 2, z: 2.0000005}
   m_Center: {x: -0.000000923872, y: 0, z: 0}
---- !u!135 &350761352308054437
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1619558185565566}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2
-  m_Center: {x: 0, y: 0, z: 0}

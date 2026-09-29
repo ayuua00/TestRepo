@@ -18,6 +18,7 @@ public class CameraSwitch : MonoBehaviour
     private Vector3 Distance;
     public Transform PlayerTs;
 
+    
     private void Start()
     {
         Distance = PlayerTs.transform.position-cameraTs.transform.position;
@@ -28,6 +29,7 @@ public class CameraSwitch : MonoBehaviour
         CameraFollow();
         if (Input.GetKeyDown(KeyCode.CapsLock) && !isTransitioning)
         {
+            
             Vector3 camera2_1 = new Vector3(cameraTs.position.x, HightMin, cameraTs.position.z);
             Vector3 camera2_2 = new Vector3(cameraTs.position.x, HightMax, cameraTs.position.z);
             Quaternion fromRotation = Quaternion.Euler(capsLock ? camera1_1 : camera1_2);
@@ -38,10 +40,17 @@ public class CameraSwitch : MonoBehaviour
 
             StartCoroutine(TransitionRotation(fromRotation, toRotation,fromPotion,toPotion));
             capsLock = !capsLock;
+
+            
         }
 
         if(capsLock==false)
-        CameraMove();
+        {
+            CameraMove();
+           
+            
+        }
+      
     }
 
     IEnumerator TransitionRotation(Quaternion from01, Quaternion to01,Vector3 from02,Vector3 to02)
