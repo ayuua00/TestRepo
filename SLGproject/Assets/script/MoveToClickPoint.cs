@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 public class MoveToClickPoint : MonoBehaviour
 {
     NavMeshAgent agent;
@@ -14,6 +15,11 @@ public class MoveToClickPoint : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            //当鼠标在UI按钮上时，无法移动
+            if (EventSystem.current!=null&&EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }
             //定义的一个容器 用来存储射线发射后击中到的物体的信息
             RaycastHit hit;
 
